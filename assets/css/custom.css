@@ -1,0 +1,13 @@
+/*
+ * Version: 2.1.1
+ * File Description: Place here your custom CSS styles
+ */
+
+ .dark-translucent-bg:after{
+ 	background-color: unset;
+ }
+
+ .link-light, .link-light:hover{
+    font-size: 35px;
+ 	text-decoration: none !important;
+ }

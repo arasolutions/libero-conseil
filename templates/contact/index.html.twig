@@ -1,0 +1,123 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+    <div class="banner dark-translucent-bg"
+         style="background-image:url('images/background-img-3.jpg'); background-position: 50% 30%;">
+        <div class="container">
+            <div class="row justify-content-lg-center">
+                <div class="col-lg-8 text-center pv-20">
+                    <h1 class="page-title text-center">Contactez-nous</h1>
+                    <div class="separator"></div>
+                    <p class="lead text-center">Un projet de recrutement, une candidature spontanée ou encore une
+                        demande d'information ? Nous serions ravis d'en discuter avec vous !</p>
+                    <ul class="list-inline mb-20 text-center">
+                        <li class="list-inline-item"><a href="tel:0188328227" class="link-dark"><i
+                                        class="text-default fa fa-phone pl-10 pr-2"></i>01 88 32 82 27</a></li>
+                        <li class="list-inline-item"><a href="mailto:contact@libero-conseil.com" class="link-dark"><i
+                                        class="text-default fa fa-envelope-o pl-10 pr-2"></i>contact@libero-conseil.com</a>
+                        </li>
+                    </ul>
+                    <div class="separator"></div>
+                    <ul class="social-links circle animated-effect-1 margin-clear text-center space-bottom">
+                        <!-- <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>-->
+                        <!--<li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>-->
+                        <!--<li class="googleplus"><a href="#"><i class="fa fa-google-plus"></i></a></li>-->
+                        <li class="linkedin"><a href="https://www.linkedin.com/company/libero-conseil/about/" target="_blank">
+                                <i class="fa fa-linkedin"></i></a>
+                        </li>
+                        <!--<li class="xing"><a href="#"><i class="fa fa-xing"></i></a></li>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner end -->
+    <!-- main-container start -->
+    <!-- ================ -->
+    <section class="main-container">
+
+        <div class="container">
+            <div class="row">
+
+                <!-- main start -->
+                <!-- ================ -->
+                <div class="main col-12 space-bottom">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <p>N'hésitez pas à nous contacter via le formulaire ci-dessous, ou bien directement par mail
+                                ou téléphone.</p>
+                            <div class="contact-form">
+                                {{ form_start(form, {'attr': {'class': 'margin-clear'}, 'multipart':'true'}) }}
+                                {% if success %}
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="alert alert-success alert-dismissible" role="alert">
+                                                <button type="button" class="close" data-dismiss="alert"
+                                                        aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span></button>
+                                                <strong>Envoyé ! </strong> Votre message a bien été envoyé.
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                                <div class="form-group has-feedback">
+                                    {{ form_label(form.name) }}
+                                    {{ form_widget(form.name, {'attr': {'class': 'form-control', 'placeholder': 'Votre nom'}}) }}
+                                    <i class="fa fa-user form-control-feedback"></i>
+                                </div>
+                                <div class="form-group has-feedback">
+                                    {{ form_label(form.email) }}
+                                    {{ form_widget(form.email, {'attr': {'class': 'form-control', 'placeholder': 'Votre email'}}) }}
+                                    <i class="fa fa-envelope form-control-feedback"></i>
+                                    <!--<small id="emailHelperText" class="form-text text-muted mt-2">Lorem ipsum dolor
+                                        sit amet, consectetur adipisicing elit.
+                                    </small>-->
+                                </div>
+                                <div class="form-group has-feedback">
+                                    {{ form_label(form.subject) }}
+                                    {{ form_widget(form.subject, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                                <div class="form-group has-feedback">
+                                    {{ form_label(form.message) }}
+                                    {{ form_widget(form.message, {'attr': {'class': 'form-control', 'placeholder': 'Message', 'rows':5}}) }}
+                                    <i class="fa fa-pencil form-control-feedback"></i>
+                                </div>
+                                <div class="form-group has-feedback">
+                                    {{ form_label(form.file, 'Fichier à joindre') }}
+                                    {{ form_widget(form.file, {'attr': {'class': 'form-control'}}) }}
+                                    <i class="fa fa-file form-control-feedback"></i>
+                                </div>
+                                {{ form_row(form.submit, {'attr': {'class': 'submit-button btn btn-lg btn-default'}}) }}
+                                {{ form_end(form) }}
+                            </div>
+                        </div>
+                        <div class="col-lg-4 text-right">
+                            <h3>Nos bureaux</h3>
+                            <div class="separator-3"></div>
+                                {% for bureau in bureaux %}
+                                <div><strong>{{ bureau.titre }}</strong></div>
+                                    <div class="separator-3"></div>
+                                    {% set address = bureau.adresse.infos %}
+                                    {% if address.streetNumber or address.route %}
+                                    <div>{{ (address.streetNumber ~ ' ' ~ address.route ~ '\n' ~ address.postalCode ~ ' ' ~ address.locality ) | nl2br}}</div>
+                                        {% else %}
+                                            <div>{{ (address.postalCode ~ ' ' ~ address.locality ) | nl2br}}</div>
+
+                                    {% endif %}
+                                    {% if bureau.telephone %}
+                                    <div><a href="tel:{{ bureau.telephone}}" class="link-dark"><i
+                                                    class="text-default fa fa-phone pl-10 pr-2"></i>{{ bureau.telephone}}</a></div>
+                                    {% endif %}
+                                    <div class="separator-3"></div>
+                                {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <!-- main end -->
+            </div>
+        </div>
+    </section>
+    <!-- main-container end -->
+{% endblock %}

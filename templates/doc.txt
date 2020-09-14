@@ -1,0 +1,18 @@
+openssl req -new -newkey rsa:2048 -nodes -out my.csr -keyout my.pkey -subj "/C=FR/ST=Gironde/L=PESSAC/O=SOGAPP"
+=> permet de générer le certif de prod
+openssl x509 -in ios_development.cer -inform DER -out ios_development.pem -outform PEM
+openssl pkcs12 -export -inkey my.pkey -in ios_development.pem -out ios_development.p12
+33%Arasol
+
+=> Parex doit deja avoir le p12 et le mdp
+
+=> créer l'id de l'app (com.arasolutions.parexlanko)
+
+keytool -genkey -v -keystore egc.keystore -alias egcProd -keyalg RSA -keysize 2048 -validity 10000
+
+
+openssl req -new -newkey rsa:2048 -nodes -out my.csr -keyout my.pkey -subj "/C=FR/ST=Gironde/L=PESSAC/O=PAREX"
+
+IOSP@rex2018
+
+Bien prendre le dv.p12 et 33%Arasol 

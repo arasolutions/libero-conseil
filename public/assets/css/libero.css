@@ -1,0 +1,68 @@
+body {
+    font-size: 18px;
+    font-weight: 100;
+    font-family: "Roboto", sans-serif;
+}
+
+.logo_footer {
+    height: 100px;
+}
+
+.header-first {
+    padding: 6px 0 0 0;
+}
+
+#logo img, #logo-mobile img {
+    height: 70px;
+}
+
+.tp-leftarrow.tparrows.hebe, .tp-rightarrow.tparrows.hebe {
+    /*display: none !important;*/
+}
+
+a:hover, a:hover > *:not(i) {
+    text-decoration: unset;
+    color: #21bb9d;
+}
+
+.contact-modal > li {
+    font-size: 0.8em;
+}
+
+.custom-file-label::after {
+    content: 'Parcourir';
+}
+
+.reference {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    filter: grayscale(100%);
+    transition: all 0.5s ease;
+    height: 100px;
+    display: -webkit-inline-box !important;
+}
+
+.reference:hover {%);
+    filter: unset;
+    transition: all 0.5s ease;
+}
+
+.activities .activity .body  p, .activities .activity .body span {
+    font-family: unset !important;
+}
+
+.content-slider-with-controls .slick-arrow, .content-slider-with-controls-autoplay .slick-arrow, .content-slider-with-thumbs .slick-arrow{
+    top: 0;
+    height: 100%;
+    min-width: 75px;
+}
+
+.content-slider-with-controls .slick-next, .content-slider-with-controls-autoplay .slick-next, .content-slider-with-thumbs .slick-next{
+    right: -80px;
+}
+
+.content-slider-with-controls .slick-prev, .content-slider-with-controls-autoplay .slick-prev, .content-slider-with-thumbs .slick-prev{
+    left: -80px;
+}

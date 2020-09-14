@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détail du poste{% endblock %}
+
+{% block body %}
+    <div class="banner video-background-banner pv-40 dark-translucent-bg hovered">
+
+        <div class="video-background-poster"
+             style="background-image: url('{{ asset('assets/imgs/stadium.jpg') }}');"></div>
+        <!-- breadcrumb end -->
+        <div class="container">
+            <div class="row justify-content-lg-center">
+                <div class="col-lg-8 text-center pv-20">
+                    <h2 class="title hc-element-invisible" data-animation-effect="fadeIn" data-effect-delay="100">Postes
+                        à pourvoir</h2>
+                    <div class="separator hc-element-invisible mt-10" data-animation-effect="fadeIn"
+                         data-effect-delay="100"></div>
+                    <p class="text-center hc-element-invisible" data-animation-effect="fadeIn" data-effect-delay="100">
+                        Vous trouverez ci-dessous certains postes sur lesquels nous travaillons actuellement.<br/>
+                        Pour des raisons de confidentialité, d'autres ne sont pas visibles, n'hésitez donc pas à nous
+                        contacter en direct.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- main-container start -->
+    <!-- ================ -->
+    <section class="main-container padding-ver-clear">
+        <div class="container pv-40">
+            <div class="row">
+
+                <!-- main start -->
+                <!-- ================ -->
+                <div class="main col-lg-8">
+                    <h1 class="title">{{ job.label }}</h1>
+                    <div class="row pb-1">
+                        <div class="col-lg-4"><i class="fa fa-calendar" aria-hidden="true"></i>
+                            <span class="pl-1">Publication : {{ job.publishAt | monthDate }}</span></div>
+                        <div class="col-lg-8 text-right"><i class="fa fa-tags" aria-hidden="true"></i>
+                            <span class="pl-1">{{ job.domain }}</span></div>
+                    </div>
+                    <div class="separator-2"></div>
+                    <p>{{ job.description | raw | nl2br }}</p>
+                    <p class="text-right">
+                        <a href="{{ path('contact', {'poste':job.label}) }}"
+                           class="btn btn-default-transparent btn-animation btn-animation--slide-horizontal margin-clear">Répondre</a>
+                    </p>
+                </div>
+                <!-- main end -->
+
+                <!-- sidebar start -->
+                <!-- ================ -->
+                <aside class="col-lg-4 col-xl-3 ml-xl-auto">
+                    <div class="sidebar">
+                        <div class="block clearfix">
+                            <h3 class="title">Informations</h3>
+                            <div class="separator-2"></div>
+                            <ul class="list margin-clear">
+                                <li><strong>Type de contrat: </strong> <span
+                                            class="text-right">{{ job.typeContrat }}</span></li>
+                                <!--<li><strong>Durée du travail: </strong> <span class="text-right">{{ job.duree }}</span>-->
+                                </li>
+                                {% if job.zipCode %}
+                                    <li><strong>Code postal: </strong> <span class="text-right">{{ job.zipCode }}</span>
+                                    </li>
+                                {% endif %}
+                                <li><strong>Exigences: </strong> <span>{{ job.requirements  | raw | nl2br }}</span>
+                                </li>
+                            </ul>
+                            <!--<h3 class="mt-4">Partager</h3>
+                            <div class="separator-2"></div>
+                            <ul class="social-links colored circle small">
+                                <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li class="googleplus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li class="xing"><a href="#"><i class="fa fa-xing"></i></a></li>
+                            </ul>-->
+                        </div>
+                    </div>
+                </aside>
+                <!-- sidebar end -->
+            </div>
+        </div>
+    </section>
+    <!-- main-container end -->
+
+{% endblock %}
