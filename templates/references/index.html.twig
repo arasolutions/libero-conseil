@@ -1,0 +1,121 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Notre activité{% endblock %}
+
+{% block body %}
+    <div class="banner video-background-banner pv-40 dark-translucent-bg hovered">
+
+        <div class="video-background-poster"
+             style="background-image: url('{{ asset('assets/imgs/stadium.jpg') }}');"></div>
+        <!-- breadcrumb end -->
+        <div class="container">
+            <div class="row justify-content-lg-center">
+                <div class="col-lg-8 text-center pv-20">
+                    <h2 class="title hc-element-invisible" data-animation-effect="fadeIn" data-effect-delay="100">
+                        Références</h2>
+                    <div class="separator hc-element-invisible mt-10" data-animation-effect="fadeIn"
+                         data-effect-delay="100"></div>
+                    <p class="text-center hc-element-invisible" data-animation-effect="fadeIn" data-effect-delay="100">
+                        A fournir</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- banner end -->
+
+    <!-- main-container start -->
+    <!-- ================ -->
+    <section class="pv-30 padding-bottom-clear">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-lg-8">
+                    <h2 class="text-center mt-4">A <strong>remplir</strong></h2>
+                    <div class="separator"></div>
+                    <p class="large text-center">Chez <span class="text-default">A remplir</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="main-container border-clear  pv-30 references">
+        <div class="container">
+            <h2 class="text-center mt-4">Ils nous font confiance</h2>
+            <div class="separator"></div>
+            <div class="row">
+                {% for reference in references %}
+                    <div class="col-sm-4">
+                        <div class="image-box style-2 mb-20 hc-shadow bordered light-gray-bg text-center">
+                            <div class="overlay-container">
+                                <img src="https://www.kiwicloudcms.com/content/picture/id/{{ reference.logo }}/ql/1140x705"
+                                     alt="">
+                                <div class="overlay-to-top">
+                                    <p class="small margin-clear"><em>{{ reference.nom }}</em></p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <section class="main-container border-clear  pv-30">
+        <h2 class="text-center mt-4">Ils parlent de nous</h2>
+        <div class="separator"></div>
+        <div class="slick-carousel content-slider">
+            {% for temoignage in temoignages %}
+                <div>
+                    <div class="container">
+                        <div class="row justify-content-md-center">
+                            <div class="col-lg-8">
+                                <div class="testimonial text-center">
+                                    <div class="testimonial-image">
+                                        <i class="fa fa-{{ temoignage.icone }}" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="separator"></div>
+                                    <div class="testimonial-body">
+                                        <blockquote>
+                                            <p>{{ temoignage.message }}"</p>
+                                        </blockquote>
+                                        <div class="testimonial-info-1">{{ temoignage.nom }}"</div>
+                                        <div class="testimonial-info-2">{{ temoignage.entreprise }}"</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+    <section class="section default-bg clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="call-to-action text-center">
+                        <div class="row">
+                            <div class="col-lg-9 cta-text">
+                                <div>A remplir</div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="cta-button"><a href="{{ path('contact') }}"
+                                                           class="btn btn-lg btn-gray-transparent btn-animated">Contact<i
+                                                class="fa fa-arrow-right pl-20"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block javascripts %}
+    <script type="text/javascript">
+        $(".slick-carousel.content-slider").slick({
+            autoplay: true,
+            autoplaySpeed: 5000,
+            arrows: false
+        });
+    </script>
+{% endblock %}

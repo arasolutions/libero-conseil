@@ -1,0 +1,98 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Postes à pourvoir{% endblock %}
+
+{% block body %}
+    <div class="banner video-background-banner pv-40 dark-translucent-bg hovered">
+
+        <div class="video-background-poster"
+             style="background-image: url('{{ asset('assets/imgs/stadium.jpg') }}');"></div>
+        <!-- breadcrumb end -->
+        <div class="container">
+            <div class="row justify-content-lg-center">
+                <div class="col-lg-8 text-center pv-20">
+                    <h2 class="title hc-element-invisible" data-animation-effect="fadeIn" data-effect-delay="100">
+                        Terrain de jeu</h2>
+                    <div class="separator hc-element-invisible mt-10" data-animation-effect="fadeIn"
+                         data-effect-delay="100"></div>
+                    <p class="text-center hc-element-invisible" data-animation-effect="fadeIn" data-effect-delay="100">
+                        A remplir
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <section class="pv-30 padding-bottom-clear">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-lg-8">
+                    <h2 class="text-center mt-4">A <strong>remplir</strong></h2>
+                    <div class="separator"></div>
+                    <p class="large text-center">Chez <span class="text-default">A remplir</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="main-container">
+
+        <div class="container">
+            <div class="row">
+
+                <!-- main start -->
+                <!-- ================ -->
+                <div class="row col-12">
+
+                    <!-- page-title start -->
+                    <!-- ================ -->
+
+                    {% for terrainDeJeu in terrainsDeJeu %}
+                        <div class="col-md-6">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <h1><i class="fa fa-{{ terrainDeJeu.icone }}" aria-hidden="true"></i></h1>
+                                        <p>{{ terrainDeJeu.titre }}</p>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <h1><i class="fa fa-{{ terrainDeJeu.icone }}" aria-hidden="true"></i>&nbsp;{{ terrainDeJeu.titre }}
+                                        </h1>
+                                        <div class="separator"></div>
+                                        <p>{{ terrainDeJeu.description|raw }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <!-- main end -->
+
+            </div>
+        </div>
+    </section>
+    <!-- main-container end -->
+
+    <section class="section default-bg clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="call-to-action text-center">
+                        <div class="row">
+                            <div class="col-lg-9 cta-text">
+                                <div>Ils nous font confiance</div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="cta-button"><a href="{{ path('references') }}"
+                                                           class="btn btn-lg btn-gray-transparent btn-animated">Références<i
+                                                class="fa fa-arrow-right pl-20"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

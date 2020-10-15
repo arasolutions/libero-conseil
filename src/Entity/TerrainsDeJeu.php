@@ -5,10 +5,11 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation as JMS;
 
-class Activities extends AbstractKiwiType
+class TerrainsDeJeu extends AbstractKiwiType
 {
+
     /**
-     * @JMS\Type("ArrayCollection<App\Entity\Activity>")
+     * @JMS\Type("ArrayCollection<App\Entity\TerrainDeJeu>")
      */
     private $items;
 

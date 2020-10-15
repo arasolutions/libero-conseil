@@ -2,7 +2,7 @@
 <html dir="ltr">
 <head>
     <meta charset="UTF-8">
-    <title>Libero Conseil - {% block title %}{% endblock %}</title>
+    <title>Libero Conseil : Cabinet de recrutement Paris et Lyon</title>
     <meta name="description" content="Nous accompagnons nos clients
                                 sur la recherche, la sélection et l’évaluation de managers, experts et dirigeants. Nous intervenons aussi bien pour des Grands Comptes que pour des start-up et des PME.">
     <meta name="author" content="Libero Conseil">
@@ -71,7 +71,7 @@
                     </div>
                     <!-- header-first end -->
                 </div>
-                <div class="col-lg-8 ml-auto">
+                <div class="col-lg-10 ml-auto">
                     <!-- header-second start -->
                     <!-- ================ -->
                     <div class="header-second clearfix">
@@ -105,24 +105,28 @@
                                     <ul class="navbar-nav ml-xl-auto">
 
                                         <!-- mega-menu start -->
-                                        <li class="nav-item {{ active == 'index' ? 'active' : '' }}">
-                                            <a href="{{ path('index') }}" class="nav-link"
-                                               id="first-dropdown">Accueil</a>
+                                        <li class="nav-item {{ active == 'recruter_avec_libero' ? ' active' : '' }}">
+                                            <a href="{{ path('recruter_avec_libero') }}" class="nav-link"
+                                               id="first-dropdown">Recruter avec Libéro</a>
                                         </li>
-                                        <li class="nav-item {{ active == 'activite' ? 'active' : '' }}">
-                                            <a href="{{ path('activite') }}" class="nav-link" id="first-dropdown">Notre
-                                                activité</a>
+                                        <li class="nav-item {{ active == 'terrain_de_jeu' ? ' active' : '' }}">
+                                            <a href="{{ path('terrain_de_jeu') }}" class="nav-link" id="first-dropdown">Terrain
+                                                de jeu</a>
                                         </li>
-                                        <li class="nav-item {{ active == 'poste' ? 'active' : '' }}">
-                                            <a href="{{ path('poste') }}" class="nav-link" id="first-dropdown">Postes à
-                                                pourvoir</a>
+                                        <li class="nav-item {{ active == 'references' ? ' active' : '' }}">
+                                            <a href="{{ path('references') }}" class="nav-link"
+                                               id="first-dropdown">Références</a>
                                         </li>
-                                        <li class="nav-item {{ active == 'contact' ? 'active' : '' }}">
+                                        <li class="nav-item {{ active == 'poste' ? ' active' : '' }}">
+                                            <a href="{{ path('poste') }}" class="nav-link"
+                                               id="first-dropdown">Postes à pourvoir</a>
+                                        </li>
+                                        <li class="nav-item {{ active == 'contact' ? ' active' : '' }}">
                                             <a href="{{ path('contact') }}" class="nav-link"
                                                id="first-dropdown">Contact</a>
                                         </li>
-                                        <li class="nav-item {{ active == 'contact' ? 'active' : '' }}">
-                                            <a href="{{ path('contact') }}" class="btn">Candidater</a>
+                                        <li class="nav-item {{ active == 'candidater' ? ' active' : '' }}">
+                                            <a href="{{ path('candidater') }}" class="btn btn-libero">Candidater</a>
                                         </li>
                                         <!-- mega-menu end -->
 
@@ -161,11 +165,11 @@
                             <nav>
                                 <ul class="nav flex-column">
                                     <li class="nav-item"><a class="nav-link" href="{{ path('index') }}">Accueil</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="{{ path('activite') }}">Notre
-                                            activité</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="{{ path('poste') }}">Postes à
-                                            pourvoir</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="{{ path('contact') }}">Contact</a>
+                                    <li class="nav-item"><a class="nav-link" href="{{ path('recruter_avec_libero') }}">Recruter
+                                            avec Libero</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{ path('terrain_de_jeu') }}">Terrain
+                                            de jeu</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{ path('references') }}">Contact</a>
                                     </li>
                                     <li class="nav-item"><a class="nav-link" href="{{ path('mentions_legales') }}">Mentions
                                             légales</a>
@@ -182,17 +186,20 @@
                                                                    alt="Charte de la diversité"></a>
                             </p>
                             <div class="separator-2"></div>
-                            Libero Conseil s’engage contre les discriminations et est signataire de la charte de la diversité.
+                            Libero Conseil s’engage contre les discriminations et est signataire de la charte de la
+                            diversité.
                         </div>
                     </div>
                     <div class="offset-lg-1 col-lg-3">
                         <div class="footer-content">
                             <h2 class="title">Contactez-nous</h2>
                             <div class="separator-2"></div>
-                            <ul class="social-links circle animated-effect-1">
-                                <li class="linkedin"><a href="https://www.linkedin.com/company/libero-conseil/about/"
-                                                        target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
+                            <a href="https://www.linkedin.com/company/libero-conseil/about/"
+                               class="btn btn-lg btn-animated linkedin" style="text-align: end;margin-bottom: 30px;">
+                                Suivez-nous
+                                sur<br><strong>Linkedin</strong>
+                                <i class="pl-10 fa fa-linkedin"></i>
+                            </a>
                             <div class="separator-2"></div>
                             <ul class="list-icons">
                                 <li><a href="tel:0188328227"><i class="fa fa-phone pr-2 text-default"></i>01 88 32 82 27</a>
@@ -248,9 +255,12 @@
 <!-- Custom Scripts -->
 <script src="{{ asset('assets/js/custom.js') }}"></script>
 
-<script type="text/javascript" src="{{ asset('assets/plugins/rs-plugin-5/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/plugins/rs-plugin-5/js/extensions/revolution.extension.layeranimation.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/plugins/rs-plugin-5/js/extensions/revolution.extension.navigation.min.js') }}"></script>
+<script type="text/javascript"
+        src="{{ asset('assets/plugins/rs-plugin-5/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
+<script type="text/javascript"
+        src="{{ asset('assets/plugins/rs-plugin-5/js/extensions/revolution.extension.layeranimation.min.js') }}"></script>
+<script type="text/javascript"
+        src="{{ asset('assets/plugins/rs-plugin-5/js/extensions/revolution.extension.navigation.min.js') }}"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143704494-1"></script>

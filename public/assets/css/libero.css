@@ -1,7 +1,12 @@
 body {
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 100;
     font-family: "Roboto", sans-serif;
+}
+
+p {
+    line-height: 30px;
+    font-size: 15px;
 }
 
 .logo_footer {
@@ -12,15 +17,19 @@ body {
     padding: 6px 0 0 0;
 }
 
-#logo img, #logo-mobile img {
+body:not(.fixed-header-on) #logo img, #logo-mobile img {
     height: 70px;
 }
 
-.tp-leftarrow.tparrows.hebe, .tp-rightarrow.tparrows.hebe {
-    /*display: none !important;*/
+body.fixed-header-on #logo img, #logo-mobile img {
+    height: 52px;
 }
 
-a:hover, a:hover > *:not(i) {
+.tp-leftarrow.tparrows.hebe, .tp-rightarrow.tparrows.hebe {
+    display: none !important;
+}
+
+a:hover, a:hover > *:not(i):not(strong) {
     text-decoration: unset;
     color: #21bb9d;
 }
@@ -44,25 +53,161 @@ a:hover, a:hover > *:not(i) {
     display: -webkit-inline-box !important;
 }
 
-.reference:hover {%);
+.reference:hover {
+%);
     filter: unset;
     transition: all 0.5s ease;
 }
 
-.activities .activity .body  p, .activities .activity .body span {
+.activities .activity .body p, .activities .activity .body span {
     font-family: unset !important;
 }
 
-.content-slider-with-controls .slick-arrow, .content-slider-with-controls-autoplay .slick-arrow, .content-slider-with-thumbs .slick-arrow{
+.content-slider-with-controls .slick-arrow, .content-slider-with-controls-autoplay .slick-arrow, .content-slider-with-thumbs .slick-arrow {
     top: 0;
     height: 100%;
     min-width: 75px;
 }
 
-.content-slider-with-controls .slick-next, .content-slider-with-controls-autoplay .slick-next, .content-slider-with-thumbs .slick-next{
+.content-slider-with-controls .slick-next, .content-slider-with-controls-autoplay .slick-next, .content-slider-with-thumbs .slick-next {
     right: -80px;
 }
 
-.content-slider-with-controls .slick-prev, .content-slider-with-controls-autoplay .slick-prev, .content-slider-with-thumbs .slick-prev{
+.content-slider-with-controls .slick-prev, .content-slider-with-controls-autoplay .slick-prev, .content-slider-with-thumbs .slick-prev {
     left: -80px;
+}
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+    background-color: transparent;
+    height: 250px;
+    /*border: 1px solid #f1f1f1;*/
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    margin-bottom: 20px;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+    background-color: #14443f;
+    color: white;
+}
+
+.flip-card-front > h1 {
+    margin-top: 60px;
+}
+
+.flip-card-front > h1 > i, .flip-card-front > p {
+    font-size: 2em;
+    color: white;
+}
+
+/* Style the back side */
+.flip-card-back {
+    background-color: #3a6d68;
+    color: white;
+    transform: rotateY(180deg);
+    font-size: .9em;
+    padding: 0 20px;
+}
+
+.flip-card-back > h1 {
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    margin: 15px 0 0 0;
+}
+
+.flip-card-back > .separator {
+    margin: 10px auto;
+}
+
+.testimonial-image > i {
+    font-size: 3em;
+    color: #FFD700;
+}
+
+@media (min-width: 768px) {
+    .team-member {
+        margin-bottom: 15px;
+    }
+}
+
+.references .image-box {
+    height: 200px;
+    align-items: center;
+    align-content: center;
+}
+
+.references .image-box > div {
+    background-color: white;
+}
+
+.references .image-box > div img {
+    padding: 20px;
+}
+
+.references .overlay-container {
+    position: relative;
+    display: flex;
+    text-align: center;
+    overflow: hidden;
+    height: 100%;
+    align-items: center;
+    align-content: center;
+}
+
+.cta-button {
+
+}
+
+.cta-text {
+    display: flex;
+    align-items: center;
+}
+
+.cta-text > div {
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 1.8em;
+}
+
+.linkedin {
+    text-align: end;
+    margin-bottom: 30px;
+}
+
+.linkedin > i {
+    line-height: 70px !important;
+}
+
+.flip-card-back > *:not(h1) {
+    text-align: left;
+}
+
+.slideshow .dark-translucent-bg {
+    background-color: rgba(0, 0, 0, 0.1);
 }

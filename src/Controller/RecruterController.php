@@ -9,7 +9,7 @@ use JMS\Serializer\SerializerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class ActiviteController extends AbstractController
+class RecruterController extends AbstractController
 {
     /** @var SerializerInterface */
     private $serializer;
@@ -24,7 +24,7 @@ class ActiviteController extends AbstractController
     }
 
     /**
-     * @Route("/activite", name="activite")
+     * @Route("/recruter-avec-libero", name="recruter_avec_libero")
      */
     public function index()
     {
@@ -36,8 +36,8 @@ class ActiviteController extends AbstractController
         $activities = $this->serializer->deserialize($json, Activities::class, 'json');
 
 
-        return $this->render('activite/index.html.twig', [
-            'active' => 'activite',
+        return $this->render('recruter/index.html.twig', [
+            'active' => 'recruter_avec_libero',
             'activities' => $activities->getItems()
         ]);
     }

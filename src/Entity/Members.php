@@ -5,38 +5,13 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation as JMS;
 
-class Members
+class Members extends AbstractKiwiType
 {
-
-    /** @JMS\Exclude */
-    private $id;
-
-    /**
-     * @JMS\Type("int")
-     */
-    private $total;
 
     /**
      * @JMS\Type("ArrayCollection<App\Entity\Member>")
      */
     private $items;
-
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getTotal()
-    {
-        return $this->total;
-    }
-
     
     /**
      * @return mixed

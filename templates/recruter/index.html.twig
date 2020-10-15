@@ -1,0 +1,144 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Notre activité{% endblock %}
+
+{% block body %}
+    <div class="banner video-background-banner pv-40 dark-translucent-bg hovered">
+
+        <div class="video-background-poster"
+             style="background-image: url('{{ asset('assets/imgs/stadium.jpg') }}');"></div>
+        <!-- breadcrumb end -->
+        <div class="container">
+            <div class="row justify-content-lg-center">
+                <div class="col-lg-8 text-center pv-20">
+                    <h2 class="title hc-element-invisible" data-animation-effect="fadeIn" data-effect-delay="100">
+                        Recruter avec Libero</h2>
+                    <div class="separator hc-element-invisible mt-10" data-animation-effect="fadeIn"
+                         data-effect-delay="100"></div>
+                    <p class="text-center hc-element-invisible" data-animation-effect="fadeIn" data-effect-delay="100">
+                        A fournir</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- banner end -->
+
+    <!-- main-container start -->
+    <!-- ================ -->
+    <section class="pv-30 padding-bottom-clear">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-lg-8">
+                    <h2 class="text-center mt-4">Notre <strong>vision du jeu</strong></h2>
+                    <div class="separator"></div>
+                    <p class="large text-center">Nous sommes convaincus que la réussite d’un recrutement réside dans
+                        notre capacité à être le meilleur <strong>ambassadeur</strong> de votre équipe. Nous nous
+                        attachons à vous
+                        accompagner sur une définition détaillée de vos besoins, à connaitre et comprendre votre
+                        environnement culturel et marché.</p>
+                    <p class="large text-center">De ce fait la construction d’une relation long terme est un enjeu
+                        essentiel pour nous.</p>
+                    <p class="large text-center">En tant qu’<strong>entrepreneurs</strong>, nous nous engageons sur
+                        chacune de nos missions avec <strong>sens</strong>, <strong>responsabilité</strong> et <strong>transparence</strong>.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="main-container border-clear  pv-30 activities">
+
+        <div class="container">
+            <div class="row">
+
+                <!-- main start -->
+                <!-- ================ -->
+                <div class="main col-12">
+
+                    <!-- page-title start -->
+                    <!-- ================ -->
+                    <!-- page-title end -->
+
+                    {% for activity in activities %}
+                        {% if loop.index % 2 == 0 %}
+                            <div class="image-box style-3 mb-20 hc-shadow bordered light-gray-bg activity"
+                                 data-animation-effect="fadeInLeft" data-effect-delay="1200">
+                                <div class="row grid-space-0">
+                                    <div class="col-lg-6">
+                                        <div class="overlay-container">
+                                            <img src="https://www.kiwicloudcms.com/content/picture/id/{{ activity.image }}/ql/750x464"
+                                                 alt="">
+                                            <div class="overlay-to-top">
+                                                <p class="large margin-clear"><em>{{ activity.imageDescription }}</em>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="body">
+                                            <div class="pv-10 hidden-lg-down"></div>
+                                            <h3>{{ activity.titre }}</h3>
+                                            <div class="separator-2"></div>
+                                            {{ activity.description | raw }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="image-box style-3 mb-20 hc-shadow bordered light-gray-bg activity"
+                                 data-animation-effect="fadeInRight" data-effect-delay="1200">
+                                <div class="row grid-space-0">
+                                    <div class="col-lg-6">
+                                        <div class="body">
+                                            <div class="pv-10 hidden-lg-down"></div>
+                                            <h3>{{ activity.titre }}</h3>
+                                            <div class="separator-2"></div>
+                                            {{ activity.description  | raw }}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="overlay-container">
+                                            <img src="https://www.kiwicloudcms.com/content/picture/id/{{ activity.image }}/ql/750x464"
+                                                 alt="">
+                                            <div class="overlay-to-top">
+                                                <p class="large margin-clear"><em>{{ activity.imageDescription }}</em>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+
+
+                </div>
+                <!-- main end -->
+
+            </div>
+        </div>
+    </section>
+    <section class="section default-bg clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="call-to-action text-center">
+                        <div class="row">
+                            <div class="col-lg-9 cta-text">
+                                <div>A remplir</div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="cta-button"><a href="{{ path('terrain_de_jeu') }}"
+                                                           class="btn btn-lg btn-gray-transparent btn-animated">Terrain
+                                        de jeu<i
+                                                class="fa fa-arrow-right pl-20"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -37,17 +37,9 @@ class IndexController extends AbstractController
         /** @var Members $members */
         $members = $this->serializer->deserialize($json, Members::class, 'json');
 
-        $json = KiwiHelper::list(154, array(
-            'order' => 'ordre%2Casc'
-        ));
-
-        /** @var Members $members */
-        $references = $this->serializer->deserialize($json, References::class, 'json');
-
         return $this->render('index/index.html.twig', [
             'active' => 'index',
-            'members' => $members->getItems(),
-            'references' => $references->getItems()
+            'members' => $members->getItems()
         ]);
     }
 

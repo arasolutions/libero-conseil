@@ -28,6 +28,11 @@ class Member
     private $photo;
 
     /**
+     * @JMS\Type("integer")
+     */
+    private $photosurvol;
+
+    /**
      * @JMS\Type("string")
      */
     private $poste;
@@ -71,6 +76,12 @@ class Member
     public function getPhoto(): ?int
     {
         return $this->photo;
+    }
+
+
+    public function getPhotosurvol(): ?int
+    {
+        return $this->photosurvol;
     }
 
     public function getPoste(): ?string
