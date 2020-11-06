@@ -1,0 +1,58 @@
+Tablette :
+Version à gauche et en haut comme sur desktop
+Version centré dans les arbres
+Version sans le logo et centré dans les arbres
+
+Profil :
+Icone + lien sur le polaroid
+
+Rajouter bandeau vert vers Recruter
+
+Bandeau :
+Centrer la bouton sous le texte
+
+Footer :
+Trouver un logo plus petit, et en vision hover direct
+
+Google analytics :
+Donner les droits sur les consultations
+
+Bandeau titre :
+Photo d'accueil à partir des arbres + opacity
+Pas de à fournir
+
+Recruter :
+Listes :
+Aérer les textes
+Changer la puce de 2eme niveau
+Photo qui prend toute la place autorisée
+
+Tuiles :
+Descendre le titre du front par rapport à l'icone
+
+Candidater :
+On mets la page de côté, ca devient "Contact" -> Contactez-nous
+
+
+
+Enlever le e accent sur tout le site
+
+Centrer les titres du carousel
+
+ajouter la politique de confidentialité (intégrer texte)
+
+bandeau décaler pour voir la cime du stade
+
+tester des images pour les photos "Recruter"
+
+Corriger texte Nos atouts
+
+Enelever "A remplir" titre dans Terrain de jeu
+Enelever "A remplir" titre dans Références
+
+On désactive Ils parlent de nous
+
+Enelver A REMPLIR dans le bandeau du bas dans Références
+
+Corriger liste sujets adans Contactez-nous
+

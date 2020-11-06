@@ -51,4 +51,13 @@ class IndexController extends AbstractController
             'active' => 'index'
         ]);
     }
+
+    /**
+     * @Route("/politique-protection-donnees-personnelles", name="rgpd")
+     */
+    public function rgpd(){
+        return $this->render('index/rgpd.html.twig', [
+            'active' => 'rgpd'
+        ]);
+    }
 }

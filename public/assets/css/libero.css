@@ -5,8 +5,12 @@ body {
 }
 
 p {
-    line-height: 30px;
+    line-height: 40px;
     font-size: 15px;
+}
+
+footer p, .mentions-legales p, .rgpd p {
+    line-height: 22px;
 }
 
 .logo_footer {
@@ -118,6 +122,7 @@ a:hover, a:hover > *:not(i):not(strong) {
 
 .flip-card-front > h1 {
     margin-top: 60px;
+    margin-bottom: 20px;
 }
 
 .flip-card-front > h1 > i, .flip-card-front > p {
@@ -200,9 +205,9 @@ a:hover, a:hover > *:not(i):not(strong) {
     margin-bottom: 30px;
 }
 
-.linkedin > i {
+/*.linkedin > i {
     line-height: 70px !important;
-}
+}*/
 
 .flip-card-back > *:not(h1) {
     text-align: left;
@@ -210,4 +215,50 @@ a:hover, a:hover > *:not(i):not(strong) {
 
 .slideshow .dark-translucent-bg {
     background-color: rgba(0, 0, 0, 0.1);
+}
+
+.activity ul, .activity li {
+    margin-top: 5px;
+}
+
+.activity .overlay-container {
+    height: 100%;
+}
+
+.activity .overlay-container > img {
+    object-fit: cover;
+    height: 100%;
+    text-align: center;
+    width: auto;
+}
+
+.activity ul > ul > li {
+    list-style: circle;
+}
+
+.banner.video-background-banner {
+    min-height: 300px;
+}
+
+.btn-animated.btn-lg i {
+    right: 15px;
+}
+
+.btn-animated:after {
+    opacity: 1;
+}
+
+.footer-content .contact {
+    height: 100px;
+    position: relative;
+}
+
+.footer-content .contact span {
+    position: absolute;
+    bottom: 0;
+    font-size: 24px;
+}
+
+.text-underline {
+    text-decoration: underline;
 }

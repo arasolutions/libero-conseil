@@ -107,7 +107,7 @@
                                         <!-- mega-menu start -->
                                         <li class="nav-item {{ active == 'recruter_avec_libero' ? ' active' : '' }}">
                                             <a href="{{ path('recruter_avec_libero') }}" class="nav-link"
-                                               id="first-dropdown">Recruter avec Libéro</a>
+                                               id="first-dropdown">Recruter avec Libero</a>
                                         </li>
                                         <li class="nav-item {{ active == 'terrain_de_jeu' ? ' active' : '' }}">
                                             <a href="{{ path('terrain_de_jeu') }}" class="nav-link" id="first-dropdown">Terrain
@@ -121,12 +121,12 @@
                                             <a href="{{ path('poste') }}" class="nav-link"
                                                id="first-dropdown">Postes à pourvoir</a>
                                         </li>
-                                        <li class="nav-item {{ active == 'contact' ? ' active' : '' }}">
+                                        <!--<li class="nav-item {{ active == 'contact' ? ' active' : '' }}">
                                             <a href="{{ path('contact') }}" class="nav-link"
                                                id="first-dropdown">Contact</a>
-                                        </li>
-                                        <li class="nav-item {{ active == 'candidater' ? ' active' : '' }}">
-                                            <a href="{{ path('candidater') }}" class="btn btn-libero">Candidater</a>
+                                        </li>-->
+                                        <li class="nav-item {{ active == 'contact' ? ' active' : '' }}">
+                                            <a href="{{ path('contact') }}" class="btn btn-libero">Contactez-nous</a>
                                         </li>
                                         <!-- mega-menu end -->
 
@@ -174,6 +174,9 @@
                                     <li class="nav-item"><a class="nav-link" href="{{ path('mentions_legales') }}">Mentions
                                             légales</a>
                                     </li>
+                                    <li class="nav-item"><a class="nav-link" href="{{ path('rgpd') }}">Politique de
+                                            protection</a>
+                                    </li>
                                 </ul>
                             </nav>
                         </div>
@@ -186,18 +189,21 @@
                                                                    alt="Charte de la diversité"></a>
                             </p>
                             <div class="separator-2"></div>
-                            Libero Conseil s’engage contre les discriminations et est signataire de la charte de la
-                            diversité.
+                            <p>Libero Conseil s’engage contre les discriminations et est signataire de la charte de la
+                                diversité.</p>
+                            <p>Nous nous attachons, dans nos interactions au quotidien, à valoriser le talent, les
+                                parcours
+                                et compétences au-delà de toute connotation ethnique, religieuse ou de genre.</p>
                         </div>
                     </div>
                     <div class="offset-lg-1 col-lg-3">
                         <div class="footer-content">
-                            <h2 class="title">Contactez-nous</h2>
+                            <p class="contact"><span>Contactez-nous</span></p>
+
                             <div class="separator-2"></div>
                             <a href="https://www.linkedin.com/company/libero-conseil/about/"
                                class="btn btn-lg btn-animated linkedin" style="text-align: end;margin-bottom: 30px;">
-                                Suivez-nous
-                                sur<br><strong>Linkedin</strong>
+                                <strong>Linkedin</strong>
                                 <i class="pl-10 fa fa-linkedin"></i>
                             </a>
                             <div class="separator-2"></div>
