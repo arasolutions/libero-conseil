@@ -278,7 +278,11 @@ ul.pagination .page-item.active .page-link,
 /*Modals
 ---------------------------------- */
 .modal-content .modal-header {
-    background-color: #21bb9d;
+    background-color: #14443f;
+}
+
+.close {
+    color:white !important;
 }
 
 /*Pace (Page loader)

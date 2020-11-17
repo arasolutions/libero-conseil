@@ -107,7 +107,6 @@ class ContactController extends AbstractController
                 'required' => true,
                 'label' => 'Email *'
             ]);
-
         if ($request->get('poste')) {
             $form->
             add('subject', ChoiceType::class, [
@@ -120,7 +119,7 @@ class ContactController extends AbstractController
                     return $choice->getLabel();
                 },
                 'choice_value' => function (SubjectType $choice = null) {
-                    return $choice != null ? $choice->getValue() : '';
+                    return $choice != null ? $choice->getValue() : ' ';
                 },
                 'data' => new SubjectType('Candidature spontanée', 1)
             ])
@@ -139,7 +138,7 @@ class ContactController extends AbstractController
                     return $choice->getLabel();
                 },
                 'choice_value' => function (SubjectType $choice = null) {
-                    return $choice != null ? $choice->getValue() : '';
+                    return $choice != null ? $choice->getValue() : ' ';
                 }])
                 ->add('message', TextareaType::class);
         }

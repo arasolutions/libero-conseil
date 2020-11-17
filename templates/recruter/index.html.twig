@@ -62,7 +62,7 @@
                             <div class="image-box style-3 mb-20 hc-shadow bordered light-gray-bg activity"
                                  data-animation-effect="fadeInLeft" data-effect-delay="1200">
                                 <div class="row grid-space-0">
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-6 d-none d-lg-block">
                                         <div class="overlay-container">
                                             <img src="https://www.kiwicloudcms.com/content/picture/id/{{ activity.image }}/ql/750x464"
                                                  alt="">
@@ -72,7 +72,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-6 col-md-12">
                                         <div class="body">
                                             <div class="pv-10 hidden-lg-down"></div>
                                             <h3>{{ activity.titre }}</h3>
@@ -86,7 +86,7 @@
                             <div class="image-box style-3 mb-20 hc-shadow bordered light-gray-bg activity"
                                  data-animation-effect="fadeInRight" data-effect-delay="1200">
                                 <div class="row grid-space-0">
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-6 col-md-12">
                                         <div class="body">
                                             <div class="pv-10 hidden-lg-down"></div>
                                             <h3>{{ activity.titre }}</h3>
@@ -94,7 +94,7 @@
                                             {{ activity.description  | raw }}
                                         </div>
                                     </div>
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-6 d-none d-lg-block">
                                         <div class="overlay-container">
                                             <img src="https://www.kiwicloudcms.com/content/picture/id/{{ activity.image }}/ql/750x464"
                                                  alt="">
@@ -122,7 +122,10 @@
                 <div class="col-12">
                     <div class="call-to-action text-center">
                         <div class="row">
-                            <div class="col-lg-12">
+                            <div class="col-lg-12 cta-text">
+                                <div>Nos domaines d'intervention</div>
+                            </div>
+                            <div class="col-lg-12 mt-3">
                                 <div class="cta-button"><a href="{{ path('terrain_de_jeu') }}"
                                                            class="btn btn-lg btn-gray-transparent btn-animated">Terrain
                                         de jeu<i
