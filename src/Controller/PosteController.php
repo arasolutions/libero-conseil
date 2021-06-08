@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Job;
 use App\Entity\Jobs;
+use Doctrine\Common\Collections\ArrayCollection;
 use JMS\Serializer\Annotation\AccessType;
 use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerInterface;
@@ -35,9 +37,16 @@ class PosteController extends AbstractController
 
         $jobs = $this->serializer->deserialize($datas, Jobs::class, 'json');
 
+        $datas = $jobs->getData()->toArray();
+
+        usort($datas, function (Job $job1, Job $job2) {
+            return ($job1->getPublishAt() > $job2->getPublishAt()) ? -1 : 1;
+        });
+
+
         return $this->render('poste/index.html.twig', [
             'active' => 'poste',
-            'jobs' => $jobs
+            'jobs' => $datas
         ]);
     }
 

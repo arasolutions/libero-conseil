@@ -39,7 +39,7 @@
                     <!-- ================ -->
                     {% if jobs | length > 0 %}
                         <div class="separator-2"></div>
-                        {% for job in jobs.data %}
+                        {% for job in jobs %}
                             <div class="image-box style-3-b">
                                 <div class="row">
                                     <!--<div class="col-md-6">
@@ -57,10 +57,14 @@
                                                             href="{{ path('poste_detail', {'id':job.uid}) }}">{{ job.label }}</a>
                                                 </h3>
                                                 <p class="small mb-10">
-                                                    <i class="fa fa-calendar-o pr-1"></i>
-                                                    {{ job.publishAt | monthDate }}
-                                                    <i class="pl-10 pr-1 fa fa-tag"></i>
-                                                    {{ job.domain }}
+                                                    {% if job.domain %}
+                                                        <i class="pl-10 pr-1 fa fa-tag"></i>
+                                                        {{ job.domain }}
+                                                    {% endif %}
+                                                    {% if job.street %}
+                                                        <i class="pl-10 pr-1 fa fa-map-marker"></i>
+                                                        {{ job.street }}
+                                                    {% endif %}
                                                 </p>
                                             </div>
                                             <div class="col-md-4">

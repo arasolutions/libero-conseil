@@ -37,9 +37,14 @@
                     <h1 class="title">{{ job.label }}</h1>
                     <div class="row pb-1">
                         <div class="col-lg-4"><i class="fa fa-calendar" aria-hidden="true"></i>
-                            <span class="pl-1">Publication : {{ job.publishAt | monthDate }}</span></div>
-                        <div class="col-lg-8 text-right"><i class="fa fa-tags" aria-hidden="true"></i>
-                            <span class="pl-1">{{ job.domain }}</span></div>
+                            <span class="pl-1">Publication : {{ job.publishAt | monthDate }}</span>
+                        </div>
+                        {% if job.domain %}
+                            <div class="col-lg-8 text-right">
+                                <i class="fa fa-tags" aria-hidden="true"></i>
+                                <span class="pl-1">{{ job.domain }}</span>
+                            </div>
+                        {% endif %}
                     </div>
                     <div class="separator-2"></div>
                     <p>{{ job.description | raw | nl2br }}</p>
@@ -58,12 +63,10 @@
                             <h3 class="title">Informations</h3>
                             <div class="separator-2"></div>
                             <ul class="list margin-clear">
-                                <li><strong>Type de contrat: </strong> <span
-                                            class="text-right">{{ job.typeContrat }}</span></li>
                                 <!--<li><strong>Durée du travail: </strong> <span class="text-right">{{ job.duree }}</span>-->
                                 </li>
-                                {% if job.zipCode %}
-                                    <li><strong>Code postal: </strong> <span class="text-right">{{ job.zipCode }}</span>
+                                {% if job.street %}
+                                    <li><strong>Localisation: </strong> <span class="text-right">{{ job.street }}</span>
                                     </li>
                                 {% endif %}
                                 <li><strong>Exigences: </strong> <span>{{ job.requirements  | raw | nl2br }}</span>

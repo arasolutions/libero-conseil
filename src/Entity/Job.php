@@ -57,6 +57,11 @@ class Job
     private $zipCode;
 
     /**
+     * @JMS\Type("string")
+     */
+    private $street;
+
+    /**
      * @JMS\SerializedName("industryLabel")
      * @JMS\Type("string")
      */
@@ -200,4 +205,21 @@ class Job
     {
         $this->zipCode = $zipCode;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getStreet()
+    {
+        return $this->street;
+    }
+
+    /**
+     * @param mixed $street
+     */
+    public function setStreet($street): void
+    {
+        $this->street = $street;
+    }
+
 }
