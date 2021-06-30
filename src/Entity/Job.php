@@ -58,6 +58,7 @@ class Job
 
     /**
      * @JMS\Type("string")
+     * @JMS\SerializedName("cus_fld_2")
      */
     private $street;
 
