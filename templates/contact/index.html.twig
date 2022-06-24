@@ -24,7 +24,8 @@
                         <!-- <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>-->
                         <!--<li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>-->
                         <!--<li class="googleplus"><a href="#"><i class="fa fa-google-plus"></i></a></li>-->
-                        <li class="linkedin"><a href="https://www.linkedin.com/company/libero-conseil/about/" target="_blank">
+                        <li class="linkedin"><a href="https://www.linkedin.com/company/libero-conseil/about/"
+                                                target="_blank">
                                 <i class="fa fa-linkedin"></i></a>
                         </li>
                         <!--<li class="xing"><a href="#"><i class="fa fa-xing"></i></a></li>-->
@@ -49,7 +50,7 @@
                             <p>N'hésitez pas à nous contacter via le formulaire ci-dessous, ou bien directement par mail
                                 ou téléphone.</p>
                             <div class="contact-form">
-                                {{ form_start(form, {'attr': {'class': 'margin-clear'}, 'multipart':'true'}) }}
+                                {{ form_start(form, {'attr': {'id':'contact-form','class': 'margin-clear'}, 'multipart':'true'}) }}
                                 {% if success %}
                                     <div class="row">
                                         <div class="col-sm-12">
@@ -89,29 +90,35 @@
                                     {{ form_widget(form.file, {'attr': {'class': 'form-control'}}) }}
                                     <i class="fa fa-file form-control-feedback"></i>
                                 </div>
-                                {{ form_row(form.submit, {'attr': {'class': 'submit-button btn btn-lg btn-libero'}}) }}
+                                {{ form_row(form.submit, {'attr': {
+                                    'data-sitekey':'6Ld2n5YgAAAAAAORJGOLaAT1jCXyYgokkrRLsqg3',
+                                    'data-callback':'onSubmit',
+                                    'data-action':'submit',
+                                    'class': 'submit-button btn btn-lg btn-libero g-recaptcha'}
+                                }) }}
                                 {{ form_end(form) }}
                             </div>
                         </div>
                         <div class="col-lg-4 text-right">
                             <h3>Nos bureaux</h3>
                             <div class="separator-3"></div>
-                                {% for bureau in bureaux %}
+                            {% for bureau in bureaux %}
                                 <div><strong>{{ bureau.titre }}</strong></div>
-                                    <div class="separator-3"></div>
-                                    {% set address = bureau.adresse.infos %}
-                                    {% if address.streetNumber or address.route %}
-                                    <div>{{ (address.streetNumber ~ ' ' ~ address.route ~ '\n' ~ address.postalCode ~ ' ' ~ address.locality ) | nl2br}}</div>
-                                        {% else %}
-                                            <div>{{ (address.postalCode ~ ' ' ~ address.locality ) | nl2br}}</div>
+                                <div class="separator-3"></div>
+                                {% set address = bureau.adresse.infos %}
+                                {% if address.streetNumber or address.route %}
+                                    <div>{{ (address.streetNumber ~ ' ' ~ address.route ~ '\n' ~ address.postalCode ~ ' ' ~ address.locality ) | nl2br }}</div>
+                                {% else %}
+                                    <div>{{ (address.postalCode ~ ' ' ~ address.locality ) | nl2br }}</div>
 
-                                    {% endif %}
-                                    {% if bureau.telephone %}
-                                    <div><a href="tel:{{ bureau.telephone}}" class="link-dark"><i
-                                                    class="text-default fa fa-phone pl-10 pr-2"></i>{{ bureau.telephone}}</a></div>
-                                    {% endif %}
-                                    <div class="separator-3"></div>
-                                {% endfor %}
+                                {% endif %}
+                                {% if bureau.telephone %}
+                                    <div><a href="tel:{{ bureau.telephone }}" class="link-dark"><i
+                                                    class="text-default fa fa-phone pl-10 pr-2"></i>{{ bureau.telephone }}
+                                        </a></div>
+                                {% endif %}
+                                <div class="separator-3"></div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -120,4 +127,13 @@
         </div>
     </section>
     <!-- main-container end -->
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+        function onSubmit(token) {
+            document.getElementById("contact-form").submit();
+        }
+    </script>
 {% endblock %}
